@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+How to run application on your local machine.
 
-Things you may want to cover:
+- Clone repository: Open your terminal and navigate to the directory where you want to clone the repository.
 
-* Ruby version
+- Navigate into the project directory(cd <project_directory>) and install the required dependencies (bundle install).
 
-* System dependencies
+- Start the Rails server( $ rails s ).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Open your web browser and visit http://localhost:3000.
