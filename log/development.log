@@ -1,0 +1,1817 @@
+  [1m[35m (178.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (134.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCrawlers (20230522203957)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "crawlers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "review_text" varchar, "ratings" integer, "review_date" date, "order_id" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230522203957"]]
+  [1m[36mTRANSACTION (167.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-22 20:40:57.864477"], ["updated_at", "2023-05-22 20:40:57.864477"]]
+  [1m[36mTRANSACTION (130.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-05-22 23:44:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 193.7ms | Allocations: 2493)
+  Rendered layout layouts/application.html.erb (Duration: 2813.5ms | Allocations: 97703)
+Completed 200 OK in 3114ms (Views: 2917.9ms | ActiveRecord: 0.0ms | Allocations: 103227)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:44:32 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms | Allocations: 1564)
+
+
+  
+SyntaxError (C:/Users/user/website_crawler/app/models/crawler.rb:53: syntax error, unexpected end-of-input):
+  
+app/models/crawler.rb:53: syntax error, unexpected end-of-input
+app/models/crawler.rb:53: syntax error, unexpected end-of-input
+app/models/crawler.rb:53: syntax error, unexpected end-of-input
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-22 23:45:47 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1203)
+  Rendered layout layouts/application.html.erb (Duration: 158.5ms | Allocations: 14527)
+Completed 200 OK in 173ms (Views: 164.0ms | Allocations: 15070)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:45:59 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1169)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 3354)
+Completed 200 OK in 48ms (Views: 39.3ms | Allocations: 3632)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:46:03 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 59ms (Allocations: 1459)
+
+
+  
+SyntaxError (C:/Users/user/website_crawler/app/models/crawler.rb:52: syntax error, unexpected end-of-input):
+  
+app/models/crawler.rb:52: syntax error, unexpected end-of-input
+app/models/crawler.rb:52: syntax error, unexpected end-of-input
+app/models/crawler.rb:52: syntax error, unexpected end-of-input
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-22 23:47:22 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 159.6ms | Allocations: 14515)
+Completed 200 OK in 176ms (Views: 164.4ms | Allocations: 15055)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:47:33 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 3374)
+Completed 200 OK in 45ms (Views: 34.2ms | Allocations: 3652)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:47:38 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 29ms (Allocations: 1445)
+
+
+  
+SyntaxError (C:/Users/user/website_crawler/app/models/crawler.rb:51: syntax error, unexpected end-of-input, expecting `end' or dummy end
+    end    
+           ^
+):
+  
+app/models/crawler.rb:51: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/models/crawler.rb:51: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/models/crawler.rb:51: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-22 23:49:55 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 147.3ms | Allocations: 14508)
+Completed 200 OK in 162ms (Views: 151.3ms | Allocations: 15047)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:50:07 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 3371)
+Completed 200 OK in 47ms (Views: 36.7ms | Allocations: 3649)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:50:11 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 26ms (Allocations: 1443)
+
+
+  
+SyntaxError (C:/Users/user/website_crawler/app/models/crawler.rb:52: syntax error, unexpected end-of-input, expecting `end' or dummy end):
+  
+app/models/crawler.rb:52: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/models/crawler.rb:52: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/models/crawler.rb:52: syntax error, unexpected end-of-input, expecting `end' or dummy end
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-22 23:52:02 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 166.5ms | Allocations: 14502)
+Completed 200 OK in 186ms (Views: 171.6ms | Allocations: 15041)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:53:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 50.5ms | Allocations: 2282)
+  Rendered layout layouts/application.html.erb (Duration: 738.8ms | Allocations: 36588)
+Completed 200 OK in 881ms (Views: 785.5ms | ActiveRecord: 0.0ms | Allocations: 40085)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:54:18 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms | Allocations: 1720)
+
+
+  
+Errno::EINVAL (Invalid argument @ rb_sysopen - https://hellopeter.com/miway):
+  
+app/models/crawler.rb:8:in `initialize'
+app/models/crawler.rb:8:in `open'
+app/models/crawler.rb:8:in `crawl_website'
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-22 23:54:59 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 168.2ms | Allocations: 14482)
+Completed 200 OK in 182ms (Views: 173.5ms | Allocations: 15025)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:55:12 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3375)
+Completed 200 OK in 43ms (Views: 34.3ms | Allocations: 3653)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:55:15 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 75.3ms | Allocations: 3368)
+Completed 200 OK in 98ms (Views: 79.4ms | Allocations: 3649)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:55:33 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 3359)
+Completed 200 OK in 60ms (Views: 46.7ms | Allocations: 3642)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:55:51 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 3371)
+Completed 200 OK in 52ms (Views: 40.4ms | Allocations: 3650)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:56:48 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 1178)
+  Rendered layout layouts/application.html.erb (Duration: 101.4ms | Allocations: 3362)
+Completed 200 OK in 128ms (Views: 106.2ms | Allocations: 3640)
+
+
+Started POST "/crawl" for ::1 at 2023-05-22 23:58:43 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 23041ms (Allocations: 12403)
+
+
+Started GET "/" for ::1 at 2023-05-22 23:59:07 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 3379)
+Completed 200 OK in 51ms (Views: 36.8ms | Allocations: 3698)
+
+
+Started GET "/" for ::1 at 2023-05-23 00:01:53 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 3356)
+Completed 200 OK in 49ms (Views: 39.1ms | Allocations: 3637)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 00:02:06 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4168ms (Allocations: 1202)
+
+
+Started GET "/" for ::1 at 2023-05-23 00:02:10 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 3382)
+Completed 200 OK in 51ms (Views: 34.5ms | Allocations: 3663)
+
+
+Started GET "/" for ::1 at 2023-05-23 00:21:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 175.4ms | Allocations: 2265)
+  Rendered layout layouts/application.html.erb (Duration: 1285.7ms | Allocations: 36656)
+Completed 200 OK in 1515ms (Views: 1374.0ms | ActiveRecord: 0.0ms | Allocations: 40154)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 00:23:11 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3039ms (ActiveRecord: 0.0ms | Allocations: 2977)
+
+
+Started GET "/" for ::1 at 2023-05-23 00:23:15 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 3382)
+Completed 200 OK in 56ms (Views: 47.5ms | ActiveRecord: 0.0ms | Allocations: 3704)
+
+
+Started GET "/" for ::1 at 2023-05-23 14:47:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 148.8ms | Allocations: 2271)
+  Rendered layout layouts/application.html.erb (Duration: 1114.4ms | Allocations: 36679)
+Completed 200 OK in 1310ms (Views: 1166.3ms | ActiveRecord: 0.0ms | Allocations: 40176)
+
+
+Started GET "/" for ::1 at 2023-05-23 14:50:49 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 3376)
+Completed 200 OK in 84ms (Views: 67.2ms | ActiveRecord: 0.0ms | Allocations: 3658)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 14:52:36 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 22758ms (ActiveRecord: 0.0ms | Allocations: 2107)
+
+
+Started GET "/" for ::1 at 2023-05-23 14:52:59 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 3379)
+Completed 200 OK in 48ms (Views: 39.2ms | ActiveRecord: 0.0ms | Allocations: 3700)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:33:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 102.7ms | Allocations: 2257)
+  Rendered layout layouts/application.html.erb (Duration: 1190.8ms | Allocations: 36498)
+Completed 200 OK in 1347ms (Views: 1239.1ms | ActiveRecord: 0.0ms | Allocations: 39994)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:33:57 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1206)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 3394)
+Completed 200 OK in 78ms (Views: 65.1ms | ActiveRecord: 0.0ms | Allocations: 3676)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:34:55 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1161)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3347)
+Completed 200 OK in 50ms (Views: 40.1ms | ActiveRecord: 0.0ms | Allocations: 3628)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 18:35:32 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2905ms (ActiveRecord: 0.0ms | Allocations: 2964)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:35:35 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 3382)
+Completed 200 OK in 45ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 3704)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:36:50 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 3365)
+Completed 200 OK in 74ms (Views: 58.9ms | ActiveRecord: 0.0ms | Allocations: 3646)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:45:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 57.2ms | Allocations: 2270)
+  Rendered layout layouts/application.html.erb (Duration: 573.3ms | Allocations: 36788)
+Completed 200 OK in 715ms (Views: 615.8ms | ActiveRecord: 0.0ms | Allocations: 40285)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:46:00 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 3373)
+Completed 200 OK in 45ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 18:47:17 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2278ms (ActiveRecord: 0.0ms | Allocations: 3204)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:47:20 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 3398)
+Completed 200 OK in 57ms (Views: 45.9ms | ActiveRecord: 0.0ms | Allocations: 3720)
+
+
+Started GET "/" for ::1 at 2023-05-23 18:59:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 39.5ms | Allocations: 2279)
+  Rendered layout layouts/application.html.erb (Duration: 567.0ms | Allocations: 36602)
+Completed 200 OK in 710ms (Views: 612.4ms | ActiveRecord: 0.0ms | Allocations: 40099)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:00:18 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 3356)
+Completed 200 OK in 66ms (Views: 52.3ms | ActiveRecord: 0.0ms | Allocations: 3638)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:00:21 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 3355)
+Completed 200 OK in 84ms (Views: 71.9ms | ActiveRecord: 0.0ms | Allocations: 3633)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:01:30 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 3371)
+Completed 200 OK in 61ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:03:23 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1157)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 3341)
+Completed 200 OK in 49ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 3619)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:03:33 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 5282ms (ActiveRecord: 0.0ms | Allocations: 3162)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:03:39 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1205)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 3391)
+Completed 200 OK in 53ms (Views: 39.5ms | ActiveRecord: 0.0ms | Allocations: 3713)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:13:44 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 57.2ms | Allocations: 1960)
+  Rendered layout layouts/application.html.erb (Duration: 662.0ms | Allocations: 36511)
+Completed 200 OK in 881ms (Views: 709.3ms | ActiveRecord: 0.0ms | Allocations: 40009)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:13:52 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1015)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 3200)
+Completed 200 OK in 85ms (Views: 71.6ms | ActiveRecord: 0.0ms | Allocations: 3482)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:14:13 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4192ms (ActiveRecord: 0.0ms | Allocations: 2067)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:14:17 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1001)
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 3186)
+Completed 200 OK in 75ms (Views: 64.6ms | ActiveRecord: 0.0ms | Allocations: 3511)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:15:54 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 69.5ms | Allocations: 3394)
+Completed 200 OK in 84ms (Views: 71.8ms | ActiveRecord: 0.0ms | Allocations: 3675)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:15:57 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 3387)
+Completed 200 OK in 54ms (Views: 44.5ms | ActiveRecord: 0.0ms | Allocations: 3665)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:16:02 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2103ms (ActiveRecord: 0.0ms | Allocations: 2110)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:16:05 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 105.2ms | Allocations: 3378)
+Completed 200 OK in 138ms (Views: 107.8ms | ActiveRecord: 0.0ms | Allocations: 3659)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:16:33 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"hellopeter.ko.lk", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4095ms (ActiveRecord: 0.0ms | Allocations: 1131)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:16:38 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1176)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 3360)
+Completed 200 OK in 66ms (Views: 55.0ms | ActiveRecord: 0.0ms | Allocations: 3641)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:17:03 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4091ms (ActiveRecord: 0.0ms | Allocations: 1139)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:17:08 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1209)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 3394)
+Completed 200 OK in 62ms (Views: 47.7ms | ActiveRecord: 0.0ms | Allocations: 3676)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:19:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 60.9ms | Allocations: 2258)
+  Rendered layout layouts/application.html.erb (Duration: 707.0ms | Allocations: 36087)
+Completed 200 OK in 903ms (Views: 753.4ms | ActiveRecord: 0.0ms | Allocations: 39584)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:21:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 43.4ms | Allocations: 2276)
+  Rendered layout layouts/application.html.erb (Duration: 571.1ms | Allocations: 36852)
+Completed 200 OK in 704ms (Views: 614.9ms | ActiveRecord: 0.0ms | Allocations: 40350)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:22:06 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 3368)
+Completed 200 OK in 50ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 3650)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:27:02 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1170)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 3355)
+Completed 200 OK in 61ms (Views: 45.3ms | ActiveRecord: 0.0ms | Allocations: 3633)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 19:27:13 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4090ms (ActiveRecord: 0.0ms | Allocations: 2966)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:27:17 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1199)
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 3385)
+Completed 200 OK in 72ms (Views: 54.4ms | ActiveRecord: 0.0ms | Allocations: 3707)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:33:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 41.3ms | Allocations: 2136)
+  Rendered layout layouts/application.html.erb (Duration: 697.6ms | Allocations: 36534)
+Completed 200 OK in 866ms (Views: 743.7ms | ActiveRecord: 0.0ms | Allocations: 40031)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:33:22 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1073)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 3262)
+Completed 200 OK in 49ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 3544)
+
+
+Started GET "/crawl?url=https%3A%2F%2Fwww.hellopeter.com%2Fmiway&commit=Start+Crawling" for ::1 at 2023-05-23 19:33:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/crawl"):
+  
+Started GET "/" for ::1 at 2023-05-23 19:33:30 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1092)
+  Rendered layout layouts/application.html.erb (Duration: 76.7ms | Allocations: 3296)
+Completed 200 OK in 92ms (Views: 78.4ms | ActiveRecord: 0.0ms | Allocations: 3577)
+
+
+Started GET "/" for ::1 at 2023-05-23 19:34:20 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1461)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 3918)
+Completed 200 OK in 89ms (Views: 72.4ms | ActiveRecord: 0.0ms | Allocations: 4672)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 71.0ms | Allocations: 2267)
+  Rendered layout layouts/application.html.erb (Duration: 1430.5ms | Allocations: 36901)
+Completed 200 OK in 1646ms (Views: 1485.0ms | ActiveRecord: 0.0ms | Allocations: 40401)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:26 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 3386)
+Completed 200 OK in 58ms (Views: 47.5ms | ActiveRecord: 0.0ms | Allocations: 3668)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:31 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 3381)
+Completed 200 OK in 62ms (Views: 46.9ms | ActiveRecord: 0.0ms | Allocations: 3659)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:37 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1189)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 3375)
+Completed 200 OK in 46ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 3656)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:44 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1165)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 3351)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 3632)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:33:54 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 66.7ms | Allocations: 3372)
+Completed 200 OK in 79ms (Views: 68.5ms | ActiveRecord: 0.0ms | Allocations: 3651)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:34:02 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 3372)
+Completed 200 OK in 53ms (Views: 40.8ms | ActiveRecord: 0.0ms | Allocations: 3650)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 21:34:09 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"hellopeter.ko.lk", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 31126ms (ActiveRecord: 0.0ms | Allocations: 26906)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:34:41 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 3428)
+Completed 200 OK in 51ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 3750)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 21:35:04 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 51867ms (ActiveRecord: 11.0ms | Allocations: 22767)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:35:56 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 3374)
+Completed 200 OK in 169ms (Views: 99.7ms | ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:49:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 47.1ms | Allocations: 2170)
+  Rendered layout layouts/application.html.erb (Duration: 652.9ms | Allocations: 36634)
+Completed 200 OK in 797ms (Views: 698.2ms | ActiveRecord: 0.0ms | Allocations: 40131)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:49:45 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1224)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 3409)
+Completed 200 OK in 55ms (Views: 46.8ms | ActiveRecord: 0.0ms | Allocations: 3691)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:49:53 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 3397)
+Completed 200 OK in 66ms (Views: 56.5ms | ActiveRecord: 0.0ms | Allocations: 3678)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 21:50:03 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 33980ms (ActiveRecord: 0.0ms | Allocations: 10554)
+
+
+Started GET "/" for ::1 at 2023-05-23 21:50:37 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | Allocations: 3391)
+Completed 200 OK in 108ms (Views: 86.4ms | ActiveRecord: 0.0ms | Allocations: 3713)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:05:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 200.3ms | Allocations: 2277)
+  Rendered layout layouts/application.html.erb (Duration: 1351.8ms | Allocations: 36694)
+Completed 200 OK in 1634ms (Views: 1416.7ms | ActiveRecord: 0.0ms | Allocations: 40190)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:07:50 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 3367)
+Completed 200 OK in 70ms (Views: 50.0ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:08:35 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 3374)
+Completed 200 OK in 45ms (Views: 35.1ms | ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:16:17 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 97.6ms | Allocations: 3386)
+Completed 200 OK in 130ms (Views: 101.0ms | Allocations: 3667)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:16:23 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 69.8ms | Allocations: 3380)
+Completed 200 OK in 82ms (Views: 72.0ms | Allocations: 3661)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 22:16:29 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 74823ms (Allocations: 10736)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:17:44 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1206)
+  Rendered layout layouts/application.html.erb (Duration: 88.1ms | Allocations: 3391)
+Completed 200 OK in 111ms (Views: 95.5ms | Allocations: 3712)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 129.8ms | Allocations: 2274)
+Started GET "/" for ::1 at 2023-05-23 22:38:25 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1199)
+  Rendered layout layouts/application.html.erb (Duration: 2111.2ms | Allocations: 63170)
+Completed 200 OK in 2299ms (Views: 2162.9ms | ActiveRecord: 0.0ms | Allocations: 66724)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 1023.0ms | Allocations: 49226)
+Completed 200 OK in 1046ms (Views: 1028.1ms | ActiveRecord: 0.0ms | Allocations: 50287)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:33 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 3361)
+Completed 200 OK in 49ms (Views: 39.4ms | ActiveRecord: 0.0ms | Allocations: 3642)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:39 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 40.9ms | Allocations: 3382)
+Completed 200 OK in 54ms (Views: 43.0ms | ActiveRecord: 0.0ms | Allocations: 3663)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:45 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1178)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 3362)
+Completed 200 OK in 48ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 3640)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:49 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1175)
+  Rendered layout layouts/application.html.erb (Duration: 93.9ms | Allocations: 3359)
+Completed 200 OK in 107ms (Views: 95.4ms | ActiveRecord: 0.0ms | Allocations: 3637)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:38:52 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 112.3ms | Allocations: 1176)
+  Rendered layout layouts/application.html.erb (Duration: 142.2ms | Allocations: 3377)
+Completed 200 OK in 159ms (Views: 148.0ms | ActiveRecord: 0.0ms | Allocations: 3658)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 22:39:15 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 31858ms (ActiveRecord: 0.0ms | Allocations: 10351)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:39:47 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1203)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3402)
+Completed 200 OK in 51ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 3723)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:43:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 51.9ms | Allocations: 2284)
+  Rendered layout layouts/application.html.erb (Duration: 611.0ms | Allocations: 36844)
+Completed 200 OK in 776ms (Views: 665.6ms | ActiveRecord: 0.0ms | Allocations: 40341)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:48:57 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 3367)
+Completed 200 OK in 70ms (Views: 54.9ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:49:06 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 3368)
+Completed 200 OK in 50ms (Views: 33.9ms | ActiveRecord: 0.0ms | Allocations: 3646)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:49:11 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 3386)
+Completed 200 OK in 57ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 3667)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:49:13 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1193)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 3377)
+Completed 200 OK in 50ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 3655)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:49:16 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 3371)
+Completed 200 OK in 49ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 3652)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:49:22 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1181)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 3365)
+Completed 200 OK in 43ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 3643)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 22:50:35 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 36599ms (Allocations: 10639)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:51:12 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 69.6ms | Allocations: 3415)
+Completed 200 OK in 87ms (Views: 71.7ms | Allocations: 3737)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:52:53 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1190)
+  Rendered layout layouts/application.html.erb (Duration: 174.9ms | Allocations: 14520)
+Completed 200 OK in 194ms (Views: 179.8ms | Allocations: 15059)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:53:06 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1175)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 3359)
+Completed 200 OK in 46ms (Views: 36.5ms | Allocations: 3637)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:53:13 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 3359)
+Completed 200 OK in 53ms (Views: 39.0ms | Allocations: 3640)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 22:53:17 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 33681ms (Allocations: 5901)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:53:52 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 113.6ms | Allocations: 3382)
+Completed 200 OK in 194ms (Views: 125.8ms | Allocations: 3663)
+
+
+Started GET "/" for ::1 at 2023-05-23 22:59:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 93.1ms | Allocations: 2281)
+  Rendered layout layouts/application.html.erb (Duration: 896.7ms | Allocations: 36508)
+Completed 200 OK in 1139ms (Views: 948.1ms | ActiveRecord: 0.0ms | Allocations: 40007)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:00:07 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"http://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 23910ms (ActiveRecord: 0.0ms | Allocations: 9422)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:00:31 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1199)
+  Rendered layout layouts/application.html.erb (Duration: 78.8ms | Allocations: 3386)
+Completed 200 OK in 101ms (Views: 81.0ms | ActiveRecord: 0.0ms | Allocations: 3708)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:00:59 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 26468ms (ActiveRecord: 0.0ms | Allocations: 4707)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:01:26 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 3398)
+Completed 200 OK in 68ms (Views: 56.9ms | ActiveRecord: 0.0ms | Allocations: 3681)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:05:54 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 59.0ms | Allocations: 2267)
+  Rendered layout layouts/application.html.erb (Duration: 743.2ms | Allocations: 36833)
+Completed 200 OK in 902ms (Views: 790.5ms | ActiveRecord: 0.0ms | Allocations: 40334)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:06:05 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 3398)
+Completed 200 OK in 52ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:06:09 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 3366)
+Completed 200 OK in 45ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 3647)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:06:17 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 71622ms (ActiveRecord: 0.0ms | Allocations: 20439)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:07:30 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 420.0ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 738.3ms | Allocations: 3385)
+Completed 200 OK in 1274ms (Views: 917.0ms | ActiveRecord: 0.0ms | Allocations: 3711)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:14:00 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 60.3ms | Allocations: 2266)
+  Rendered layout layouts/application.html.erb (Duration: 576.7ms | Allocations: 36814)
+Completed 200 OK in 801ms (Views: 627.7ms | ActiveRecord: 0.0ms | Allocations: 40312)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:14:11 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.0ms | Allocations: 1953)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:14:11 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 3397)
+Completed 200 OK in 57ms (Views: 44.6ms | ActiveRecord: 0.0ms | Allocations: 3719)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:16:15 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 3386)
+Completed 200 OK in 50ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 3668)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:16:19 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 0.0ms | Allocations: 947)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:16:20 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 3377)
+Completed 200 OK in 70ms (Views: 58.9ms | ActiveRecord: 0.0ms | Allocations: 3659)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:25:05 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 198.6ms | Allocations: 14519)
+Completed 200 OK in 217ms (Views: 203.2ms | Allocations: 15059)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:25:18 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 3368)
+Completed 200 OK in 44ms (Views: 34.6ms | Allocations: 3646)
+
+
+Started POST "/crawl" for ::1 at 2023-05-23 23:25:29 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2421ms (Allocations: 2824)
+
+
+Started GET "/" for ::1 at 2023-05-23 23:25:32 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 3428)
+Completed 200 OK in 51ms (Views: 37.8ms | Allocations: 3710)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:01:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 152.0ms | Allocations: 2268)
+  Rendered layout layouts/application.html.erb (Duration: 1066.3ms | Allocations: 36719)
+Completed 200 OK in 1270ms (Views: 1137.3ms | ActiveRecord: 0.0ms | Allocations: 40217)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:01:37 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 3365)
+Completed 200 OK in 56ms (Views: 47.3ms | ActiveRecord: 0.0ms | Allocations: 3647)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:06:31 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 122.4ms | Allocations: 3366)
+Completed 200 OK in 140ms (Views: 124.2ms | ActiveRecord: 0.0ms | Allocations: 3644)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:06:54 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 3363)
+Completed 200 OK in 61ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 3641)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 10:07:08 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2882ms (Allocations: 3299)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:07:12 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 3398)
+Completed 200 OK in 48ms (Views: 34.5ms | Allocations: 3720)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:37:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 53.9ms | Allocations: 2222)
+  Rendered layout layouts/application.html.erb (Duration: 871.1ms | Allocations: 36720)
+Completed 200 OK in 1022ms (Views: 924.0ms | ActiveRecord: 0.0ms | Allocations: 40217)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:38:14 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1172)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 3358)
+Completed 200 OK in 55ms (Views: 37.1ms | ActiveRecord: 0.0ms | Allocations: 3640)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:38:18 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 3368)
+Completed 200 OK in 46ms (Views: 36.5ms | ActiveRecord: 0.0ms | Allocations: 3646)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:39:10 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 3365)
+Completed 200 OK in 51ms (Views: 38.3ms | ActiveRecord: 0.0ms | Allocations: 3646)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 10:39:22 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2159ms (ActiveRecord: 0.0ms | Allocations: 3270)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:39:24 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1233)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 3417)
+Completed 200 OK in 56ms (Views: 47.1ms | ActiveRecord: 0.0ms | Allocations: 3738)
+
+
+Started GET "/" for ::1 at 2023-05-24 10:59:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 52.2ms | Allocations: 2298)
+  Rendered layout layouts/application.html.erb (Duration: 647.3ms | Allocations: 36643)
+Completed 200 OK in 857ms (Views: 691.2ms | ActiveRecord: 0.0ms | Allocations: 40142)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:01:40 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 3374)
+Completed 200 OK in 51ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 3656)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:01:59 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 0.0ms | Allocations: 1570)
+
+
+  
+SyntaxError (C:/Users/user/website_crawler/app/models/crawler.rb:27: syntax error, unexpected '.'
+... logger.info("Review Texts: #{.ellipses}")
+...                              ^
+C:/Users/user/website_crawler/app/models/crawler.rb:30: syntax error, unexpected '.'
+...    logger.info("Order IDs: #{.order-id}")
+...                              ^
+):
+  
+app/models/crawler.rb:27: syntax error, unexpected '.'
+app/models/crawler.rb:30: syntax error, unexpected '.'
+app/models/crawler.rb:27: syntax error, unexpected '.'
+app/models/crawler.rb:30: syntax error, unexpected '.'
+app/models/crawler.rb:27: syntax error, unexpected '.'
+app/models/crawler.rb:30: syntax error, unexpected '.'
+app/controllers/crawlers_controller.rb:9:in `crawl'
+Started GET "/" for ::1 at 2023-05-24 11:02:51 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 219.7ms | Allocations: 14532)
+Completed 200 OK in 242ms (Views: 225.8ms | Allocations: 15075)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:03:08 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1173)
+  Rendered layout layouts/application.html.erb (Duration: 52.0ms | Allocations: 3358)
+Completed 200 OK in 69ms (Views: 54.1ms | Allocations: 3636)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:03:57 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1182)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 3366)
+Completed 200 OK in 45ms (Views: 34.8ms | Allocations: 3644)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:04:17 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3381)
+Completed 200 OK in 52ms (Views: 40.8ms | Allocations: 3659)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:04:34 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3391ms (Allocations: 13584)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:04:38 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 3395)
+Completed 200 OK in 56ms (Views: 42.2ms | Allocations: 3714)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:09:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 63.5ms | Allocations: 2268)
+  Rendered layout layouts/application.html.erb (Duration: 781.4ms | Allocations: 36829)
+Completed 200 OK in 930ms (Views: 828.1ms | ActiveRecord: 0.0ms | Allocations: 40327)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:09:13 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 3365)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 3647)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:09:19 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2065ms (ActiveRecord: 0.0ms | Allocations: 3336)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:09:22 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 3383)
+Completed 200 OK in 84ms (Views: 73.7ms | ActiveRecord: 0.0ms | Allocations: 3705)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:31:33 +0200
+Started GET "/" for ::1 at 2023-05-24 11:31:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (1.1ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 105.5ms | Allocations: 4512)
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 109.4ms | Allocations: 4995)
+  Rendered layout layouts/application.html.erb (Duration: 1044.4ms | Allocations: 64292)
+Completed 200 OK in 1265ms (Views: 1094.7ms | ActiveRecord: 2.6ms | Allocations: 68898)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 1138.6ms | Allocations: 66747)
+Completed 200 OK in 1364ms (Views: 1191.5ms | ActiveRecord: 1.1ms | Allocations: 71474)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:31:51 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1743)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 3935)
+Completed 200 OK in 50ms (Views: 39.4ms | ActiveRecord: 0.6ms | Allocations: 4232)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:32:03 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1706)
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 3890)
+Completed 200 OK in 59ms (Views: 48.7ms | ActiveRecord: 0.6ms | Allocations: 4180)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:33:21 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | Allocations: 3897)
+Completed 200 OK in 65ms (Views: 54.4ms | ActiveRecord: 0.6ms | Allocations: 4187)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:33:28 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2707ms (ActiveRecord: 0.0ms | Allocations: 2618)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:33:31 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (1.3ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1729)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 3915)
+Completed 200 OK in 56ms (Views: 44.5ms | ActiveRecord: 1.3ms | Allocations: 4254)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:35:43 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.7ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1737)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 3921)
+Completed 200 OK in 76ms (Views: 60.0ms | ActiveRecord: 0.7ms | Allocations: 4211)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:35:56 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 522ms (ActiveRecord: 0.0ms | Allocations: 1493)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:35:57 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.7ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1740)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 3924)
+Completed 200 OK in 56ms (Views: 44.1ms | ActiveRecord: 0.7ms | Allocations: 4217)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:57:16 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.8ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 54.9ms | Allocations: 3031)
+  Rendered layout layouts/application.html.erb (Duration: 743.4ms | Allocations: 37504)
+Completed 200 OK in 1040ms (Views: 795.6ms | ActiveRecord: 0.8ms | Allocations: 41937)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:57:46 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1725)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 3911)
+Completed 200 OK in 50ms (Views: 38.2ms | ActiveRecord: 0.6ms | Allocations: 4210)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:58:04 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.5ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1715)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 3901)
+Completed 200 OK in 51ms (Views: 37.9ms | ActiveRecord: 0.5ms | Allocations: 4198)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 11:58:19 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1931ms (ActiveRecord: 0.0ms | Allocations: 2558)
+
+
+Started GET "/" for ::1 at 2023-05-24 11:58:21 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1739)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 3923)
+Completed 200 OK in 54ms (Views: 41.9ms | ActiveRecord: 0.6ms | Allocations: 4257)
+
+
+Started GET "/" for ::1 at 2023-05-24 12:03:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.8ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 47.4ms | Allocations: 3043)
+  Rendered layout layouts/application.html.erb (Duration: 645.6ms | Allocations: 37583)
+Completed 200 OK in 874ms (Views: 704.5ms | ActiveRecord: 0.8ms | Allocations: 42019)
+
+
+Started GET "/" for ::1 at 2023-05-24 12:03:20 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1729)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 3918)
+Completed 200 OK in 65ms (Views: 48.5ms | ActiveRecord: 0.6ms | Allocations: 4217)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 12:03:31 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2304ms (ActiveRecord: 0.0ms | Allocations: 2613)
+
+
+Started GET "/" for ::1 at 2023-05-24 12:03:33 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  [1m[36mCrawler Load (0.6ms)[0m  [1m[34mSELECT "crawlers".* FROM "crawlers"[0m
+  ↳ app/views/crawlers/index.html.erb:12
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1730)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 3916)
+Completed 200 OK in 56ms (Views: 45.3ms | ActiveRecord: 0.6ms | Allocations: 4255)
+
+
+Started GET "/" for ::1 at 2023-05-24 12:08:00 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 1464)
+  Rendered layout layouts/application.html.erb (Duration: 72.4ms | Allocations: 3918)
+Completed 200 OK in 118ms (Views: 104.2ms | ActiveRecord: 0.0ms | Allocations: 4682)
+
+
+Started GET "/" for ::1 at 2023-05-24 17:49:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 541.3ms | Allocations: 1983)
+  Rendered layout layouts/application.html.erb (Duration: 3307.6ms | Allocations: 36607)
+Completed 200 OK in 3890ms (Views: 3439.7ms | ActiveRecord: 0.0ms | Allocations: 40830)
+
+
+Started GET "/" for ::1 at 2023-05-24 17:49:39 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 136.8ms | Allocations: 1046)
+  Rendered layout layouts/application.html.erb (Duration: 173.4ms | Allocations: 3234)
+Completed 200 OK in 188ms (Views: 175.3ms | ActiveRecord: 0.0ms | Allocations: 3533)
+
+
+Started POST "/crawler" for ::1 at 2023-05-24 17:49:56 +0200
+  
+ActionController::RoutingError (No route matches [POST] "/crawler"):
+  
+Started GET "/" for ::1 at 2023-05-24 17:49:59 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1002)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 3221)
+Completed 200 OK in 56ms (Views: 46.3ms | ActiveRecord: 0.0ms | Allocations: 3520)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:23:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 235.9ms | Allocations: 2272)
+  Rendered layout layouts/application.html.erb (Duration: 1893.1ms | Allocations: 36833)
+Completed 200 OK in 2403ms (Views: 1967.6ms | ActiveRecord: 0.0ms | Allocations: 41298)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:24:32 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1189)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 3377)
+Completed 200 OK in 87ms (Views: 68.1ms | ActiveRecord: 0.0ms | Allocations: 3676)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 18:25:41 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 22824ms (ActiveRecord: 0.0ms | Allocations: 1479)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:26:05 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 3384)
+Completed 200 OK in 130ms (Views: 57.5ms | ActiveRecord: 0.0ms | Allocations: 3718)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:31:24 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1389)
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 3843)
+Completed 200 OK in 97ms (Views: 81.6ms | Allocations: 4606)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 18:31:58 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 21108ms (Allocations: 992)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:32:19 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 3197)
+Completed 200 OK in 50ms (Views: 38.1ms | Allocations: 3534)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:43:23 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 293.5ms | Allocations: 2353)
+  Rendered layout layouts/application.html.erb (Duration: 2882.8ms | Allocations: 36840)
+Completed 200 OK in 3625ms (Views: 3070.7ms | ActiveRecord: 0.0ms | Allocations: 41065)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:43:54 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 3371)
+Completed 200 OK in 65ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 3670)
+
+
+Started POST "/crawl" for ::1 at 2023-05-24 18:44:28 +0200
+Processing by CrawlersController#crawl as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "url"=>"https://www.hellopeter.com/miway", "commit"=>"Start Crawling"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 7715ms (ActiveRecord: 0.0ms | Allocations: 3425)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:44:37 +0200
+Processing by CrawlersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 114.9ms | Allocations: 3374)
+Completed 200 OK in 135ms (Views: 116.7ms | ActiveRecord: 0.0ms | Allocations: 3713)
+
+
+Started GET "/" for ::1 at 2023-05-24 18:44:58 +0200
+Processing by CrawlersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering crawlers/index.html.erb within layouts/application
+  Rendered crawlers/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1178)
+  Rendered layout layouts/application.html.erb (Duration: 106.2ms | Allocations: 3398)
+Completed 200 OK in 134ms (Views: 108.8ms | ActiveRecord: 0.0ms | Allocations: 3696)
+
+
